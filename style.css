@@ -1,0 +1,401 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    color: #222222;
+    overflow-x: hidden;
+}
+
+
+/* Header */
+.header {
+    width: 100%;
+    min-height: 85px;
+    padding: 20px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+
+/* Logo */
+.logo a {
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #222222;
+}
+
+
+/* Navigation */
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #666666;
+
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #00a8e8;
+}
+
+
+/* Username Button */
+.username-btn {
+    padding: 11px 20px;
+    border: none;
+    border-radius: 8px;
+
+    background: #e7f7ff;
+    color: #009bd8;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.username-btn:hover {
+    background: #00a8e8;
+    color: #ffffff;
+}
+
+
+/* Hero Section */
+.hero {
+    min-height: calc(100vh - 85px);
+    width: 100%;
+
+    padding: 50px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+
+/* Hero Content */
+.hero-content {
+    flex: 1;
+    max-width: 550px;
+}
+
+
+/* Main Heading */
+.hero-content h1 {
+    font-size: clamp(30px, 3.5vw, 44px);
+    line-height: 1.35;
+    font-weight: 800;
+
+    color: #263548;
+
+    margin-bottom: 20px;
+}
+
+
+/* Heading Highlight */
+.hero-content h1 span {
+    color: #00a8e8;
+}
+
+
+/* Description */
+.hero-content p {
+    max-width: 450px;
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: #858585;
+
+    margin-bottom: 28px;
+}
+
+
+/* CTA Button */
+.cta-button {
+    padding: 14px 25px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: linear-gradient(135deg,
+            #08b8f0,
+            #008fdb);
+
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(0, 168, 232, 0.18);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* CTA Hover Effect */
+.cta-button:hover {
+    transform: scale(1.1) rotate(-3deg);
+
+    box-shadow: 0 9px 22px rgba(0, 168, 232, 0.3);
+}
+
+
+/* CTA Click Effect */
+.cta-button:active {
+    transform: scale(0.97);
+}
+
+
+/* Hero Image Section */
+.hero-image {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+}
+
+
+/* Image Container */
+.image-container {
+    width: 100%;
+    max-width: 400px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Orbit and squeeze animation */
+    animation: orbitSqueeze 5s ease-in-out infinite;
+
+    transform-origin: center;
+    will-change: transform;
+}
+
+
+/* Washing Machine Image */
+.washing-machine {
+    display: block;
+
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* ===================================
+   MAIN ANIMATION
+   Orbit Rotation + Squeeze Effect
+=================================== */
+
+@keyframes orbitSqueeze {
+
+    /* Starting position */
+    0% {
+        transform: translate(0, 0) rotate(0deg) scale(1, 1);
+    }
+
+    /* Move upward and tilt */
+    15% {
+        transform: translate(0, -15px) rotate(8deg) scale(0.95, 1.05);
+    }
+
+    /* Move right and squeeze */
+    30% {
+        transform: translate(15px, -5px) rotate(15deg) scale(1.08, 0.88);
+    }
+
+    /* Move downward */
+    45% {
+        transform: translate(5px, 12px) rotate(5deg) scale(0.92, 1.08);
+    }
+
+    /* Move left and tilt */
+    60% {
+        transform: translate(-15px, 5px) rotate(-8deg) scale(1.05, 0.95);
+    }
+
+    /* Squeeze at another point */
+    75% {
+        transform: translate(-5px, -10px) rotate(-12deg) scale(0.88, 1.08);
+    }
+
+    /* Return to original position */
+    100% {
+        transform: translate(0, 0) rotate(0deg) scale(1, 1);
+    }
+
+}
+
+
+/* ===================================
+   TABLET RESPONSIVE
+=================================== */
+
+@media screen and (max-width: 900px) {
+
+    .header {
+        padding: 20px 5%;
+    }
+
+    .navbar {
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 45px 5%;
+        gap: 25px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .image-container {
+        max-width: 320px;
+    }
+
+}
+
+
+/* ===================================
+   MOBILE RESPONSIVE
+=================================== */
+
+@media screen and (max-width: 650px) {
+
+    .header {
+        flex-wrap: wrap;
+        padding: 18px 6%;
+    }
+
+    .logo a {
+        font-size: 21px;
+    }
+
+    .username-btn {
+        padding: 9px 13px;
+        font-size: 12px;
+    }
+
+    .navbar {
+        order: 3;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        gap: 18px;
+    }
+
+    .navbar a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: auto;
+
+        padding: 45px 7%;
+
+        flex-direction: column;
+        text-align: center;
+
+        gap: 40px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .image-container {
+        max-width: 280px;
+    }
+
+}
+
+
+/* ===================================
+   SMALL MOBILE
+=================================== */
+
+@media screen and (max-width: 380px) {
+
+    .hero-content h1 {
+        font-size: 25px;
+    }
+
+    .navbar {
+        gap: 12px;
+    }
+
+    .image-container {
+        max-width: 230px;
+    }
+
+}
+
+
+/* ===================================
+   REDUCED MOTION ACCESSIBILITY
+=================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .image-container {
+        animation: none;
+    }
+
+    .cta-button,
+    .username-btn,
+    .navbar a {
+        transition: none;
+    }
+
+}
